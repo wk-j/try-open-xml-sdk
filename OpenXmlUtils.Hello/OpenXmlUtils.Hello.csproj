@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A5BE976-F534-49F1-A323-743E11D1B861}</ProjectGuid>
+    <ProjectGuid>{3D334B9B-E4FF-4960-85BA-CBF2A0A33D79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpreadsheetLight.InsertTable</RootNamespace>
-    <AssemblyName>SpreadsheetLight.InsertTable</AssemblyName>
+    <RootNamespace>OpenXmlUtils.Hello</RootNamespace>
+    <AssemblyName>OpenXmlUtils.Hello</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -41,10 +41,6 @@
       <HintPath>..\packages\OpenXmlUtils.1.0.0.7\lib\net45\OpenXmlUtils.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SpreadsheetLight, Version=3.4.8.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpreadsheetLight.3.4.8\lib\SpreadsheetLight.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InsertSpec.cs" />
+    <Compile Include="WriteExcelSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
