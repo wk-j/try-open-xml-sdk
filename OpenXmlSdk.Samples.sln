@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadWriteExcel", "ReadWriteExcel\ReadWriteExcel.csproj", "{EFB34327-2FA9-4378-BF23-9442BEE3F14C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentFormat.ReadWriteExcel", "DocumentFormat.ReadWriteExcel\DocumentFormat.ReadWriteExcel.csproj", "{EFB34327-2FA9-4378-BF23-9442BEE3F14C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadsheetLight.Hello", "SpreadsheetLight.Hello\SpreadsheetLight.Hello.csproj", "{4066BD88-B2D2-4D0D-8780-B460D98EB727}"
 EndProject
