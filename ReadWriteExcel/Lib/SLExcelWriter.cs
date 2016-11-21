@@ -51,8 +51,12 @@ namespace ReadWriteExcel.Lib
             var sheets = document.WorkbookPart.Workbook.
                 AppendChild<Sheets>(new Sheets());
 
-            var sheet = new Sheet() { Id = document.WorkbookPart.GetIdOfPart(worksheetPart),
-                SheetId = 1, Name = data.SheetName??"Sheet 1" };
+            var sheet = new Sheet()
+            {
+                Id = document.WorkbookPart.GetIdOfPart(worksheetPart),
+                SheetId = 1,
+                Name = data.SheetName ?? "Sheet 1"
+            };
             sheets.AppendChild(sheet);
 
             // Add header
@@ -63,7 +67,7 @@ namespace ReadWriteExcel.Lib
 
             foreach (var header in data.Headers)
             {
-                row.AppendChild(CreateTextCell(ColumnLetter(cellIdex++), rowIdex, header??string.Empty));
+                row.AppendChild(CreateTextCell(ColumnLetter(cellIdex++), rowIdex, header ?? string.Empty));
             }
             if (data.Headers.Count > 0)
             {
@@ -84,7 +88,7 @@ namespace ReadWriteExcel.Lib
                 sheetData.AppendChild(row);
                 foreach (var callData in rowData)
                 {
-                    var cell = CreateTextCell(ColumnLetter(cellIdex++), rowIdex, callData??string.Empty);
+                    var cell = CreateTextCell(ColumnLetter(cellIdex++), rowIdex, callData ?? string.Empty);
                     row.AppendChild(cell);
                 }
             }

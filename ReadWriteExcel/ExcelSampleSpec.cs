@@ -25,7 +25,7 @@ namespace ExcelSample
                     new List<string> { "F1 3", "F2 3", "F3 3" },
                 }
             });
-            File.WriteAllBytes("Excel.Output.xls", result);
+            File.WriteAllBytes("Excel.Output.xlsx", result);
         }
     }
 }
