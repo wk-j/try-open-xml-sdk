@@ -64,10 +64,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateDocumentSpec.cs" />
+    <Compile Include="InsertRowSpec.cs" />
     <Compile Include="ReplaceTextSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Input\CloneRow.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Input\InsertRow.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Input\ReplaceText.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

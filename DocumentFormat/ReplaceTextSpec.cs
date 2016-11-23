@@ -42,30 +42,33 @@ namespace DocumentFormat
                 }
             }
         }
-        
+
         [Fact]
         public void ShouldReplaceTextInExcel()
         {
             var fileName = @"Input\ReplaceText.xlsx";
 
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+            using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
             {
-                using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fs, true))
+                using (var doc = SpreadsheetDocument.Open(fs, true))
                 {
-                    WorkbookPart workbookPart = doc.WorkbookPart;
-                    SharedStringTablePart sstpart = workbookPart.GetPartsOfType<SharedStringTablePart>().First();
-                    SharedStringTable sst = sstpart.SharedStringTable;
+                    var workbookPart = doc.WorkbookPart;
+                    var sstPart = workbookPart.GetPartsOfType<SharedStringTablePart>().First();
+                    //var sst = sstpart.SharedStringTable;
 
                     // Iterate through all the items in the SharedStringTable. If the text already exists, return its index.
-                    foreach (SharedStringItem item in sstpart.SharedStringTable.Elements<SharedStringItem>())
+                    foreach (var item in sstPart.SharedStringTable.Elements<SharedStringItem>())
                     {
-                        if (item.InnerText != "" && item.InnerText.ToString().Contains("{year}"))
+                        if (item.InnerText.ToString().Contains("{year}"))
                         {
-                            Text text2 = item.Descendants<Text>().First();
-                            text2.Text = item.InnerText.Replace("{year}", "2016");
+                            Text child = item.Descendants<Text>().Where(x => x.InnerText == "{year}").FirstOrDefault();
+                            if (child != null)
+                            {
+                                child.Text = "2016";
+                            }
                         }
                     }
-                    sstpart.SharedStringTable.Save();
+                    sstPart.SharedStringTable.Save();
                 }
             }
         }
