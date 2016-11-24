@@ -1,10 +1,6 @@
 ﻿using Syncfusion.XlsIO;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace XlsIO
@@ -41,12 +37,7 @@ namespace XlsIO
             var workbook = excelEngine.Excel.Workbooks.Open(template);
             workbook.Version = ExcelVersion.Excel2007;
 
-            var worksheet1 = workbook.Worksheets[0];
-
-
-            ITemplateMarkersProcessor marker = workbook.CreateTemplateMarkersProcessor();
-            //IConditionalFormats conditionalFormats = marker.CreateConditionalFormats(worksheet1["C5"]);
-
+            var marker = workbook.CreateTemplateMarkersProcessor();
             var image = File.ReadAllBytes(imagePath);
 
             var customers = new List<Customer> {
